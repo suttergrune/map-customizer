@@ -1,9 +1,10 @@
+
 let map;
-if(map){
+if (map) {
   console.log('yup');
 }
 
-function initMap(coords){
+function initMap(coords) {
   // map options
   let options = {
     zoom: 10,
@@ -22,17 +23,17 @@ function initMap(coords){
   });
 
   // listen for click on map
-  google.maps.event.addListener(map, 'click', function(event){
-    addMarker({coords:event.latLng})
+  google.maps.event.addListener(map, 'click', function (event) {
+    addMarker({ coords: event.latLng })
   });
 
-  function addMarker(props){
+  function addMarker(props) {
     let marker = new google.maps.Marker({
       position: props.coords,
       map: map,
       //icon: props.icon
     });
-    marker.addListener('click', function(){
+    marker.addListener('click', function () {
       infoWindow.open(map, marker);
     });
   }

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+  <script src="js/axios.min.js"></script>
+  <title>Map Customizer</title>
+  <style>
+    #map {
+      height: 600px;
+      width: 80vw;
+      animation-delay: 0s;
+      animation-duration: 2s;
+      animation-iteration-count: 1;
+    }
+
+    #title {
+      animation-delay: 2s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <br><br>
+  <div class="container">
+    <div class="card">
+      <div class="card-header animated slideInDown">
+        <div class="row">
+          <div class="col-12">
+            <p class="text-left">Created by Sutter Grune</p>
+            <br>
+            <h3 id='title' class="text-center animated rubberBand">Map Customizer</h3>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="input-group mb-5">
+        </div>
+        <div class="card-body animated slideInUp">
+          <form id="location-form" method="post">
+            <div class="form-group input-group">
+              <input type="text" id="location-input" class="form-control form-control-lg"
+                placeholder="enter a location...">
+              <div class="input-group-append">
+                <button id="formbtn" class="btn btn-primary" type="submit" name="submit">Display Map</button>
+              </div>
+            </div>
+            <h6 id="alert" class="text-danger" style="visibility: hidden;">the Google Maps API key has expired</h6>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="buttons" class="container-fluid mt-5" style="visibility: hidden;">
+      <div class="row">
+        <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2 mt-3">
+          <button id="retro" class="btn btn-success">Retro</button>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2 mt-3">
+          <button id="roads" class="btn btn-warning">Roads</button>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2 mt-3">
+          <button id="blue" class="btn btn-primary">Blue</button>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2 mt-3">
+          <button id="night" class="btn btn-secondary">Night</button>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2 mt-3">
+          <button id="desert" class="btn btn-danger">Desert</button>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2 col-lg-2 col-xl-2 mt-3">
+          <button id="default" class="btn btn-info">Default</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="mapContainer" style="visibility: hidden;">
+      <div class="container mt-4 mb-5">
+        <div class="row justify-content-center animated fadeInRight">
+          <div id='map' class="mt-2"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/request.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDuwGekrBwbIwmK65Tn2k-EQ8Gjj1zTAuw&callback=initMap"
+      async defer></script>
+    <script src="js/map.js"></script>
+    <script src="js/click.js"></script>
+
+</body>
+
+</html>
