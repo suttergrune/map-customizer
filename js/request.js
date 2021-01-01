@@ -4,7 +4,7 @@ form.addEventListener('click', function () {
   let formbtn = document.getElementById('formbtn');
   animate(formbtn, 'pulse');
 });
-form.addEventListener('click', geocode);
+document.getElementById('formbtn').addEventListener('click', geocode);
 
 function geocode(e) {
   e.preventDefault();
@@ -14,7 +14,7 @@ function geocode(e) {
     axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
       params: {
         address: location,
-        key: 'AIzaSyDUfMGbqov295t7rYxRUeYt1D5ASMpPg5w'
+        key: '***REMOVED***'
       }
     })
       .then(function (response) {

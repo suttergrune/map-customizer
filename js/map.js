@@ -1,8 +1,5 @@
 
 let map;
-if (map) {
-  console.log('yup');
-}
 
 function initMap(coords) {
   // map options
